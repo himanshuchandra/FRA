@@ -13,15 +13,8 @@ angular.module('appskeleton')
     $scope.default='img/default.jpg';
     $scope.galImage = '';
     $scope.loading = true;
-    $scope.fresults={
-      item: 'samosa',
-      accuracy: 0.9493837 ,
-      info:{"foods":[
-        {"food_name":"samosa","brand_name":null,"serving_qty":1,"serving_unit":"samosa","serving_weight_grams":100,"nf_calories":261.5,"nf_total_fat":17.24,"nf_saturated_fat":7.11,"nf_cholesterol":27.48,"nf_sodium":423.3,"nf_total_carbohydrate":23.91,"nf_dietary_fiber":2.08,"nf_sugars":1.59,"nf_protein":3.49,"nf_potassium":189.09,"nf_p":52.08}
-      ]
-    }
-    };
-    var imgUrl = "http://192.168.0.107:1234/User_data/target.jpeg"
+    $scope.fresults={};
+    var imgUrl = "http://13.127.248.47/User_data/target.jpeg";
 
         ////////Optional method
     $scope.uploadPhoto = function (imageURI) {
@@ -39,7 +32,7 @@ angular.module('appskeleton')
       options.chunkedMode = false;
 
       var ft = new FileTransfer();
-      ft.upload(imageURI, "http://192.168.0.107:1234/analyzer/uploadPic", function (result) {
+      ft.upload(imageURI, "http://13.127.248.47/analyzer/uploadPic", function (result) {
         console.log(JSON.stringify(result));
         $scope.fresults=result;
         $scope.galImage = imgUrl;
@@ -167,7 +160,7 @@ angular.module('appskeleton')
     $scope.uploadImage = function() {
       $scope.loading = false;
       // Destination URL
-      var url = "http://192.168.0.107:1234/analyzer/uploadPic";
+      var url = "http://13.127.248.47/analyzer/uploadPic";
 
       // File for Upload
       var targetPath = $scope.pathForImage($scope.image);

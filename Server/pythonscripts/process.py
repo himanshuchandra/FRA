@@ -126,7 +126,7 @@ train = ['http://cdni.condenast.co.uk/639x426/a_c/21Samosa_CNT_16nov12_iStock_b.
     'https://www.wikihow.com/images/1/18/Make-Bread-Pakora-Step-18.jpg'
 ]
 
-clarifai_key = 'fb765ec6059142f9a1fc54d2ec043363'
+clarifai_key = 'df23862769534e7881e2ae91ba747ded'
 app = ClarifaiApp(api_key = clarifai_key)   
 model = app.models.get('food-items-v1.0')  
 
@@ -220,7 +220,7 @@ check_concepts = ['samosa', 'tomato', 'apple', 'banana', 'lady finger',
 # latest_model = app.models.create("custom3", concepts=["samosa", "tomato", "apple", "banana", "lady finger", "onion", "coke", "capsicum", "pav bhaji"])
 # latest_model = latest_model.train()
 
-s_model = app.models.get('custom1')
+s_model = app.models.get('food-custom2')
 # s_model.train()
 
 

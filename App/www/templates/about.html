@@ -15,18 +15,19 @@
   <!-- <div ng-show="!(pathForImage(image))"> -->
   <img ng-src="{{pathForImage(image)}}" class="img-responsive center-block capture" style="width: 300px; height: 350px;">
 <!-- </div> -->
+<br>
     <button ng-click="getImage()" class="btn btn-primary center-block">Select image from gallery</button>
     <br>
     <!-- <img ng-src="galImage" class="img-responsive center-block capture" style="width: 300px; height: 350px;"> -->
   <img src="img/loadin2.gif" class="banner" ng-hide="loading" alt="">
 
-  <section class="results">
-    <h3>Results</h3>
+  <section class="results center-block" ng-hide="!fresults.item">
+    <h3 class="text-primary">Results</h3>
     <h4>Item: {{fresults.item}}</h4>
-    <h4>Accuracy {{fresults.accuracy}}</h4>
+    <h4>Accuracy: {{fresults.accuracy}}</h4>
 
     <br>
-    <h4>Nutritional Information</h4>
+    <h4 class="text-primary">Nutritional Information</h4>
     <p>Serving weight(gm): {{fresults.info.foods[0].serving_weight_grams}}</p>
     <p>Calories: {{fresults.info.foods[0].nf_calories}}</p>
     <p>Total Fat: {{fresults.info.foods[0].nf_total_fat}}</p>
