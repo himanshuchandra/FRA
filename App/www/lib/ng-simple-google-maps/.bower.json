@@ -1,0 +1,14 @@
+{
+  "name": "ng-simple-google-maps",
+  "homepage": "https://github.com/rahulsethione/ngGoogleMaps",
+  "_release": "7b4e4b53bd",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7b4e4b53bd073beaf9e0f43a356428c87463f980"
+  },
+  "_source": "https://github.com/rahulsethione/ngGoogleMaps.git",
+  "_target": "*",
+  "_originalSource": "ng-simple-google-maps",
+  "_direct": true
+}

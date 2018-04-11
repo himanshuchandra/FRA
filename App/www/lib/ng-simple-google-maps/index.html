@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html ng-app="GoogleMapApp">
+	<head>
+		<script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+		<!--Debugging-->
+		<!--<script type="text/javascript" src="./src/module.js"></script>-->
+		<!--<script type="text/javascript" src="./src/directive/ngGoogleMap.js"></script>-->
+		<script type="text/javascript" src="./dist/ng-google-maps.min.js"></script>
+		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXQLIsX2ybDBkM_FDm-AQp-3aU3eCjU-g"></script>
+		<style type="text/css">
+			#map {
+				height: 480px;
+				-webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.53);
+				-moz-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.53);
+				box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.53);
+			}
+		</style>
+	</head>
+	<body ng-controller="MapController">
+		<ng-google-map id="map" class="google-map" options="map.options" markers="map.markers" route="trackedRoute"></simple-google-map>
+	</body>
+	<script type="text/javascript">
+		angular.module('GoogleMapApp', ['ngGoogleMaps']).controller('MapController', ['$scope', function($scope) {
+		
+			$scope.map = {
+				options: {
+					center: {position: {lat: 43.9124, lng: 75.7873}},
+					zoom: 8
+				},
+				markers: [{
+					title: 'Marker',
+					position: {lat: 45.5124, lng: -74.78643798828125}
+				}]
+			};
+		}]);
+	</script>
+</html>

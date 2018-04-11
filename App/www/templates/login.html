@@ -1,0 +1,84 @@
+<ion-content overflow-scroll="true">
+
+<div style="
+    text-align: center;
+">
+  <h1>FRA</h1>
+  <p class="lead">
+    <img src="img/logo.png" alt="FRA"><br>
+    </p>
+</div>
+
+  <div style="
+    text-align: center;
+    background: rgb(245,154,0);">
+    <h1 style="
+    background: rgb(245,154,0);
+">Login</h1>
+
+<form name="loginForm" ng-submit="submitForm(loginForm)" novalidate="" class="ng-pristine ng-invalid ng-invalid-required ng-valid-pattern" style="
+    text-align: center;
+    background: rgb(245,154,0);
+">
+
+    <input type="text" ng-model="login.loginid" name="validloginid" pattern="[a-zA-Z0-9_.@!#$%^&amp;*-+=><?/~`'|]{5,50}" placeholder="Email/Username/Mobile" required="" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-touched" style="margin: 0px auto;border-radius: 5px;">
+    <span ng-show="loginForm.validloginid.$touched &amp;&amp;
+     loginForm.validloginid.$error.pattern &amp;&amp; !loginForm.validloginid.$error.required" class="ng-hide" style="">
+     Invalid email/username/Mobile </span>
+    <span ng-show="loginForm.validloginid.$touched &amp;&amp;
+     loginForm.validloginid.$error.required" class="" style="">Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !loginForm.validloginid.$touched &amp;&amp;
+     loginForm.validloginid.$error.required" class="ng-hide">
+        Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !loginForm.validloginid.$touched &amp;&amp;
+     loginForm.validloginid.$error.pattern" class="ng-hide">
+        Invalid email/username </span>
+
+
+    <input type="password" ng-model="login.loginpassword" placeholder="Password" name="validloginpass" pattern="[a-z0-9A-Z!@#$%^&amp;*()_.]{8,25}" required="" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-touched" style="margin: 0px auto;border-radius: 5px;margin-top: 10px;">
+    <span ng-show="loginForm.validloginpass.$touched &amp;&amp;
+     loginForm.validloginpass.$error.pattern &amp;&amp; !loginForm.validloginpass.$error.required" class="ng-hide">
+     password too small or invalid character,use(8-25 char)(a-z,0-9,A-Z,!,@,#,$,%,^,&amp;,*,(,),_,.) </span>
+    <span ng-show="loginForm.validloginpass.$touched &amp;&amp; loginForm.validloginpass.$error.required" class="" style="">
+        Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !loginForm.validloginpass.$touched &amp;&amp;
+     loginForm.validloginpass.$error.required" class="ng-hide">Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !loginForm.validloginpass.$touched &amp;&amp;
+     loginForm.validloginpass.$error.pattern" class="ng-hide">
+     password too small or invalid character,use(8-25 char)(a-z,0-9,A-Z,!,@,#,$,%,^,&amp;,*,(,),_,.) </span>
+
+
+    <input type="submit" ng-click="submitted=true;" value="Login">
+
+    </form>
+
+
+
+    <h3 style="
+    text-align: center;
+    background: rgb(245,154,0);
+"><a ng-href="#/app/forgotpassword" href="#/app/forgotpassword">Forgot Password</a></h3>
+
+    <h3 style="
+    text-align: center;
+    background: rgb(245,154,0);
+"><a ng-href="#/app/signup" href="#/app/signup">SIGNUP</a></h3>
+
+
+<div class="ng-binding" style="
+    text-align: center;
+    background: rgb(245,154,0);
+">
+    <input type="button" value="Sign in with google">
+
+</div>
+
+<div class="ng-binding" style="
+    text-align: center;
+    background: rgb(245,154,0);
+">
+    <input type="button" value="Sign in with facebook">
+
+</div>
+</div>
+</ion-content>

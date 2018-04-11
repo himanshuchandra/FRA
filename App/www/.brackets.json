@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/workspace2/MediaTek/www/lib/ng-cordova-oauth/src/oauth.yahoo.js",
+        "D:/workspace2/MediaTek/www/lib/ng-cordova-oauth/src/oauth.xing.js",
+        "D:/workspace2/MediaTek/www/lib/ng-cordova-oauth/src/oauth.yammer.js",
+        "D:/workspace2/MediaTek/www/lib/ng-cordova-oauth/src/plugin.js"
+    ]
+}

@@ -1,0 +1,29 @@
+.bar.bar-stable{
+  background-color: #d9534f;
+  color:white;
+}
+
+.bar.bar-stable .title{
+  color:white;
+}
+
+.banner{
+  width: 100px;
+  height: 100px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-left:-50px;
+  margin-top:-50px
+}
+
+.homeTitle{
+  color: #d9534f;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+
+.capture{
+  border-radius: 5px;
+}

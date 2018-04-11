@@ -1,0 +1,99 @@
+<ion-content overflow-scroll="true">
+
+
+<div style="
+    text-align: center;
+">
+  <h1>FRA</h1>
+  <p class="lead">
+    <img src="img/logo.png" alt="FRA"><br>
+    </p><h1 style="
+    background: rgb;
+    background: rgb(245,154,0);
+">SignUp</h1>
+  <p></p>
+</div>
+
+  <form name="regForm" ng-submit="submitForm(regForm)" novalidate="" class="ng-pristine ng-binding ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern" style="
+    background: rgb(245,154,0);
+    text-align: center;
+">
+    <br>
+    <input type="email" name="validemail" ng-model="signup.useremail" placeholder="Email" ng-keyup="enableRegister(regForm);" required="" class="ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" style="
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 8px;
+">
+    <span ng-show="regForm.validemail.$touched &amp;&amp; regForm.validemail.$invalid &amp;&amp;
+     !regForm.validemail.$error.required" class="ng-hide" style="">Invalid email </span>
+    <span ng-show="regForm.validemail.$touched &amp;&amp; regForm.validemail.$error.required" class="ng-hide">
+        Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !regForm.validemail.$touched &amp;&amp;
+     regForm.validemail.$error.required" class="ng-hide">Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !regForm.validemail.$touched &amp;&amp;
+     regForm.validemail.$invalid &amp;&amp; !regForm.validemail.$error.required" class="ng-hide">
+        Invalid email </span>
+
+
+    <input type="text" name="validusername" ng-model="signup.username" ng-keyup="checkUsername(regForm);" placeholder="Username" pattern="[a-zA-Z0-9_.]{5,20}" required="" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern" style="margin: 0 auto;border-radius: 5px;margin-bottom: 8px;">
+    <span ng-show="regForm.validusername.$touched &amp;&amp;
+     regForm.validusername.$error.pattern &amp;&amp;
+      !regForm.validusername.$error.required" class="ng-hide">
+      Invalid username(Should have only a-z,0-9,.,_ and 5-20 chars,without any spaces) </span>
+    <span ng-show="regForm.validusername.$touched &amp;&amp;
+     regForm.validusername.$error.required" class="ng-hide">Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !regForm.validusername.$touched &amp;&amp;
+     regForm.validusername.$error.required" class="ng-hide">
+        Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !regForm.validusername.$touched &amp;&amp;
+     regForm.validusername.$error.pattern" class="ng-hide">
+     Invalid username(Should have only a-z,0-9,.,_ and 5-20 chars,without any spaces) </span>
+
+
+
+    <input type="password" ng-keyup="checkp(regForm)" ng-model="signup.password1" name="validpass1" placeholder="Password" pattern="[a-z0-9A-Z!@#$%^&amp;*()_.]{8,25}" required="" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern" style="
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 8px;
+">
+       <span ng-show="regForm.validpass1.$touched &amp;&amp; regForm.validpass1.$error.pattern &amp;&amp;
+        !regForm.validpass1.$error.required" class="ng-hide">
+        password too small or invalid character,use(8-25 char)(a-z,0-9,A-Z,!,@,#,$,%,^,&amp;,*,(,),_,.) </span>
+    <span ng-show="regForm.validpass1.$touched &amp;&amp; regForm.validpass1.$error.required" class="ng-hide">
+        Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !regForm.validpass1.$touched &amp;&amp;
+     regForm.validpass1.$error.required" class="ng-hide">
+        Cannot be left empty </span>
+    <span ng-show="submitted &amp;&amp; !regForm.validpass1.$touched &amp;&amp;
+     regForm.validpass1.$error.pattern" class="ng-hide">
+     password too small or invalid character,use(8-25 char)(a-z,0-9,A-Z,!,@,#,$,%,^,&amp;,*,(,),_,.) </span>
+
+    <input type="password" ng-keyup="checkp(regForm)" ng-model="signup.password2" placeholder="Password" class="ng-pristine ng-untouched ng-valid ng-empty" style="
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 8px;
+">
+
+
+    <input type="submit" ng-click="submitted=true;" value="Register" ng-disabled="isNotValid" disabled="disabled">
+
+        </form>
+
+
+
+<h1 style="
+    text-align: center;
+    background: rgb(245,154,0);
+"><a ng-href="#/app/login" href="#/app/login">LOGIN</a></h1>
+
+<!--<div ng-controller="GoogleCtrl">
+    <input type="button" ng-click="SignInGoogle()" value="Sign in with google" />
+    {{GoogleMessage}}
+</div>
+
+<div ng-controller="FacebookCtrl">
+    <input type="button" ng-click="SignInFacebook()" value="Sign in with facebook" />
+    {{FacebookMessage}}
+</div>-->
+
+</ion-content>

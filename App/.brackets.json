@@ -1,0 +1,11 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/Asus/Desktop/workspace/git-projects/appskeleton/platforms/android/build/intermediates/assets/debug/www/js/app.js",
+        "C:/Users/Asus/Desktop/workspace/git-projects/appskeleton/www/js/app.js",
+        "C:/Users/Asus/Desktop/workspace/git-projects/appskeleton/www/js/controllers/google.js",
+        "C:/Users/Asus/Desktop/workspace/git-projects/appskeleton/hooks/after_prepare/010_add_platform_class.js",
+        "C:/Users/Asus/Desktop/workspace/git-projects/appskeleton/www/js/controllers/main.js",
+        "C:/Users/Asus/Desktop/workspace/git-projects/appskeleton/www/js/controllers/login.js",
+        "angular.js"
+    ]
+}

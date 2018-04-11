@@ -1,0 +1,45 @@
+<ion-content overflow-scroll="true">
+  <div>
+    <br>
+    <br>
+    <br>
+  </div>
+  </div>
+  <p class="text-center homeTitle">Food Recognition Application</p>
+  <br>
+  <br>
+  <!-- <div style="background-image:url(http://192.168.0.103:1234/User_data/lo.jpg);width:300px;height:300px;z-index:1000"> -->
+  <!-- <h2 style="color:white;position:absolute;top:40%;left:10%">Look Up Food</h2> -->
+  <p class="text-center homeTitle">Capture an image</p>
+  <!-- <img src="img/default.jpg" class="img-responsive center-block capture" style="width: 300px; height: 350px;"> -->
+  <!-- <div ng-show="!(pathForImage(image))"> -->
+  <img ng-src="{{pathForImage(image)}}" class="img-responsive center-block capture" style="width: 300px; height: 350px;">
+<!-- </div> -->
+    <button ng-click="getImage()" class="btn btn-primary center-block">Select image from gallery</button>
+    <br>
+    <!-- <img ng-src="galImage" class="img-responsive center-block capture" style="width: 300px; height: 350px;"> -->
+  <img src="img/loadin2.gif" class="banner" ng-hide="loading" alt="">
+
+  <section class="results">
+    <h3>Results</h3>
+    <h4>Item: {{fresults.item}}</h4>
+    <h4>Accuracy {{fresults.accuracy}}</h4>
+
+    <br>
+    <h4>Nutritional Information</h4>
+    <p>Serving weight(gm): {{fresults.info.foods[0].serving_weight_grams}}</p>
+    <p>Calories: {{fresults.info.foods[0].nf_calories}}</p>
+    <p>Total Fat: {{fresults.info.foods[0].nf_total_fat}}</p>
+    <p>Total Fat: {{fresults.info.foods[0].nf_total_fat}}</p>
+    <p>Saturated Fat: {{fresults.info.foods[0].nf_saturated_fat}}</p>
+    <p>Cholestrol: {{fresults.info.foods[0].nf_cholesterol}}</p>
+
+  </section>
+
+</ion-content>
+<ion-footer-bar class="bar bar-positive">
+  <div class="button-bar">
+    <button class="button icon-left ion-camera" ng-click="loadImage()">Take Photo</button>
+    <button class="button icon-left ion-upload" ng-click="uploadImage()" ng-disabled="image === null">Upload</button>
+  </div>
+</ion-footer-bar>
