@@ -21,19 +21,19 @@
     <!-- <img ng-src="galImage" class="img-responsive center-block capture" style="width: 300px; height: 350px;"> -->
   <img src="img/loadin2.gif" class="banner" ng-hide="loading" alt="">
 
-  <section class="results center-block" ng-hide="!fresults.item">
+  <section class="results center-block" >
     <h3 class="text-primary">Results</h3>
     <h4>Item: {{fresults.item}}</h4>
     <h4>Accuracy: {{fresults.accuracy}}</h4>
 
     <br>
     <h4 class="text-primary">Nutritional Information</h4>
-    <p>Serving weight(gm): {{fresults.info.foods[0].serving_weight_grams}}</p>
-    <p>Calories: {{fresults.info.foods[0].nf_calories}}</p>
-    <p>Total Fat: {{fresults.info.foods[0].nf_total_fat}}</p>
-    <p>Total Fat: {{fresults.info.foods[0].nf_total_fat}}</p>
-    <p>Saturated Fat: {{fresults.info.foods[0].nf_saturated_fat}}</p>
-    <p>Cholestrol: {{fresults.info.foods[0].nf_cholesterol}}</p>
+    <p>Serving weight(gm): {{fresults.info.serving_weight_grams}}</p>
+    <p>Calories: {{fresults.info.nf_calories}}</p>
+    <p>Total Fat: {{fresults.info.nf_total_fat}}</p>
+    <p>Total Fat: {{fresults.info.nf_total_fat}}</p>
+    <p>Saturated Fat: {{fresults.info.nf_saturated_fat}}</p>
+    <p>Cholestrol: {{fresults.info.nf_cholesterol}}</p>
 
   </section>
 

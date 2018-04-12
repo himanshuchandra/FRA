@@ -50,7 +50,7 @@ var analyzeImage = function (response) {
         }
         console.log("Results are:\n", result);
 
-        if(result.item && result.accuracy>0.2){
+        if(result.item && result.accuracy>0.001){
             getInfo(result, response);
         }
         else{
@@ -78,8 +78,17 @@ var getInfo = function (result, clientRes) {
         .then(function (response) {
             response.getBody();
             console.log("Nutritional information:\n");
-            console.log(response.body);
-            result.info = response.body;
+            var data = JSON.parse(response.body);
+            data = data.foods[0];
+            var info={
+                serving_weight_grams: data.serving_weight_grams,
+                nf_calories: data.nf_calories,
+                nf_total_fat: data.nf_total_fat,
+                nf_saturated_fat: data.nf_saturated_fat,
+                nf_cholesterol: data.nf_cholesterol
+            }
+            console.log(info);
+            result.info = info;
             clientRes.json({ "message": result });
             // response.body;
         });
@@ -124,7 +133,7 @@ var callUpload = function (request, response) {
                 response.json({ message: "fail" });
             }
             else {
-                console.log("Image upload successfull!\nAnalyzing image..");
+                // console.log("Image upload successfull!\nAnalyzing image..");
                 // response.json({ message: "success" });
                 analyzeImage(response);
             }
@@ -137,6 +146,7 @@ var callUpload = function (request, response) {
 
 
 router.post('/uploadPic', function (request, response) {
+    console.log("Uploading image & Analyzing..");
     // var file = request.files;
     // request.file = file;
     // saveFile();

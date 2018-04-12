@@ -8,13 +8,13 @@
  * Controller of the appskeleton
  */
 angular.module('appskeleton')
-  .controller('AboutCtrl', function ($scope, $timeout, $cordovaCamera, $cordovaFile, $cordovaFileTransfer, $cordovaDevice, $ionicPopup, $cordovaActionSheet) {
+  .controller('AboutCtrl', function ($scope, $timeout, $cordovaCamera, $cordovaFile, $cordovaFileTransfer, $cordovaDevice, $ionicPopup, $cordovaActionSheet, requrl) {
 
     $scope.default='img/default.jpg';
     $scope.galImage = '';
     $scope.loading = true;
     $scope.fresults={};
-    var imgUrl = "http://13.127.248.47/User_data/target.jpeg";
+    var imgUrl = requrl+"/User_data/target.jpeg";
 
         ////////Optional method
     $scope.uploadPhoto = function (imageURI) {
@@ -32,9 +32,19 @@ angular.module('appskeleton')
       options.chunkedMode = false;
 
       var ft = new FileTransfer();
-      ft.upload(imageURI, "http://13.127.248.47/analyzer/uploadPic", function (result) {
-        console.log(JSON.stringify(result));
-        $scope.fresults=result;
+      ft.upload(imageURI, requrl + "/analyzer/uploadPic", function (result) {
+        var data= JSON.stringify(result.response);
+        data = JSON.parse(data);
+        var resString = JSON.stringify(data);
+        var resJSON = JSON.parse(JSON.parse(resString));
+        console.log("resulttt",resJSON);
+        if(resJSON.message === 'none'){
+          $scope.showAlert('Fail', 'Not found!');
+        }
+        else{
+          $scope.fresults=resJSON.message;
+          $scope.showAlert('Success', 'Finished Processing!');
+        }
         $scope.galImage = imgUrl;
         $scope.loading = true;
       }, function (error) {
@@ -46,7 +56,7 @@ angular.module('appskeleton')
     $scope.getImage = function () {
       $scope.galImage = '';
       navigator.camera.getPicture($scope.uploadPhoto, function (message) {
-        alert('get picture failed');
+        alert('Get picture failed!');
       }, {
           quality: 100,
           destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -160,7 +170,7 @@ angular.module('appskeleton')
     $scope.uploadImage = function() {
       $scope.loading = false;
       // Destination URL
-      var url = "http://13.127.248.47/analyzer/uploadPic";
+      var url = requrl + "/analyzer/uploadPic";
 
       // File for Upload
       var targetPath = $scope.pathForImage($scope.image);
@@ -177,9 +187,19 @@ angular.module('appskeleton')
       };
 
       $cordovaFileTransfer.upload(url, targetPath, options).then(function(result) {
-        $scope.fresults=result;
+        var data= JSON.stringify(result.response);
+        data = JSON.parse(data);
+        var resString = JSON.stringify(data);
+        var resJSON = JSON.parse(JSON.parse(resString));
+        console.log("resulttt",resJSON);
+        if(resJSON.message === 'none'){
+          $scope.showAlert('Fail', 'Not found!');
+        }
+        else{
+          $scope.fresults=resJSON.message;
+          $scope.showAlert('Success', 'Finished Processing!');
+        }
         $scope.loading = true;
-        $scope.showAlert('Success', 'Finished Processing!');
       });
     }
 

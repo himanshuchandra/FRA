@@ -31,7 +31,7 @@ angular.module('appskeleton', [
   });
 })
 
-.constant("requrl","http://13.127.248.47")
+.constant("requrl","http://192.168.0.103:1234")
 .constant("GOOGLE_CLIENT_ID","11067462844-4s6bjl47j6m7v2g4it1ndnfbgirk7m3g.apps.googleusercontent.com")
 .constant("GOOGLE_API_KEY","AIzaSyA7-XiSE26yWofo9OO0Za34DrgU5q775o4")
 .constant("FACEBOOK_APP_ID","1853899954884964")
